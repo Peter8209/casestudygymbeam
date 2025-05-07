@@ -1,0 +1,26 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gymbeam_hr\n"
+"Language: sk\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "I Love GymBeam"
+msgstr "Milujem GymBeam"
+
+msgid "Salary"
+msgstr "Plat"
+
+msgid "Tax"
+msgstr "Daň"
+
+msgid "Total Salary"
+msgstr "Celkový plat"
+
+msgid "Special Phone"
+msgstr "Špeciálne telefónne číslo"
+
+msgid "Employee Contacts"
+msgstr "Kontakty zamestnanca"
+
+msgid "Send emails"
+msgstr "Odoslať emaily"

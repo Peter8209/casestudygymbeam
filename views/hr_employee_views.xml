@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_employee_form_gymbeam" model="ir.ui.view">
+        <field name="name">gymbeam.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_email']" position="after">
+                <field name="i_love_gb"/>
+            </xpath>
+            <xpath expr="//field[@name='address_home_id']" position="after">
+                <field name="salary"/>
+                <field name="tax"/>
+                <field name="total_salary" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='mobile_phone']" position="replace">
+                <field name="special_phone"/>
+            </xpath>
+            <xpath expr="//field[@name='i_love_gb']" position="after">
+                <field name="employee_contacts" attrs="{'invisible': [('i_love_gb', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//header/button[@name='action_generate_plan']" position="after">
+                <button name="action_send_emails" type="object" string="Send Emails" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,59 @@
+<odoo>
+    <template id="job_application_form" name="Job Application Form">
+        <form action="/submit/job_application" method="post" class="oe_form">
+            <div class="form-group">
+                <label for="name">Your Name*</label>
+                <input type="text" name="name" class="form-control" required/>
+                <span class="error" t-if="errors.get('name')">This is a required field</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email*</label>
+                <input type="email" name="email" class="form-control" required/>
+                <span class="error" t-if="errors.get('email')">This is a required field</span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Your Phone Number*</label>
+                <input type="text" name="phone" class="form-control" required/>
+                <span class="error" t-if="errors.get('phone')">This is a required field</span>
+            </div>
+            <div class="form-group">
+                <label for="introduction">Short Introduction</label>
+                <textarea name="introduction" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="resume">Resume*</label>
+                <input type="file" name="resume" class="form-control" required/>
+                <span class="error" t-if="errors.get('resume')">This is a required field</span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send Application</button>
+            </div>
+        </form>
+        <script>
+            document.querySelector("form").addEventListener("submit", function(event) {
+                const fields = document.querySelectorAll("input[required], textarea[required]");
+                let valid = true;
+
+                fields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add("error");
+                        valid = false;
+                    } else {
+                        field.classList.remove("error");
+                    }
+                });
+
+                if (!valid) {
+                    event.preventDefault();
+                    alert("Please fill in the form correctly.");
+                }
+            });
+        </script>
+        <style>
+            .error {
+                border: 1px solid red;
+                color: red;
+            }
+        </style>
+    </template>
+</odoo>
